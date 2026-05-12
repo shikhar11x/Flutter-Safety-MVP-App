@@ -399,20 +399,40 @@ image_picker: ^1.1.2
 
 ---
 
-## 🚨 Emergency & Incident
+## 🚨 SOS Emergency
 
 <table>
 <tr>
 <td align="center">
-<img src="screenshots/home.jpeg" width="250"/>
+<img src="screenshots/sos.jpeg" width="250"/>
 <br/>
-<b>SOS Alert</b>
+<b>SOS Trigger</b>
 </td>
 
 <td align="center">
+<img src="screenshots/sos2.jpeg" width="250"/>
+<br/>
+<b>SOS Success</b>
+</td>
+</tr>
+</table>
+
+---
+
+## ⚠️ Incident Reporting
+
+<table>
+<tr>
+<td align="center">
 <img src="screenshots/incident.jpeg" width="250"/>
 <br/>
-<b>Incident Reporting</b>
+<b>Incident Form</b>
+</td>
+
+<td align="center">
+<img src="screenshots/incident2.jpeg" width="250"/>
+<br/>
+<b>Incident Submitted</b>
 </td>
 </tr>
 </table>
@@ -436,7 +456,6 @@ image_picker: ^1.1.2
 </td>
 </tr>
 </table>
-
 # 👨‍💻 Built With
 
 - Flutter
