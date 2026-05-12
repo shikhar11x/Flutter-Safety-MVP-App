@@ -353,17 +353,35 @@ image_picker: ^1.1.2
 
 # 📸 Screenshots
 
-| Login | OTP | Home |
-|---|---|---|
-| Add Screenshot | Add Screenshot | Add Screenshot |
+## 🔐 Authentication
 
-| SOS | GPS | Incident |
+| Login Screen | OTP Verification | Register Screen |
 |---|---|---|
-| Add Screenshot | Add Screenshot | Add Screenshot |
+| ![](screenshots/login.jpeg) | ![](screenshots/otp.jpeg) | ![](screenshots/signin.jpeg) |
 
-| Admin Panel |
-|---|
-| Add Screenshot |
+---
+
+## 🏠 User Dashboard
+
+| Home Screen | GPS Tracking |
+|---|---|
+| ![](screenshots/home.jpeg) | ![](screenshots/gps.jpeg) |
+
+---
+
+## 🚨 Emergency & Incident
+
+| SOS Alert | Incident Reporting |
+|---|---|
+| ![](screenshots/home.jpeg) | ![](screenshots/incident.jpeg) |
+
+---
+
+## 🛡️ Admin Panel
+
+| Admin Dashboard | Admin Monitoring |
+|---|---|
+| ![](screenshots/admin1.jpeg) | ![](screenshots/admin2.jpeg) |
 
 ---
 
