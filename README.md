@@ -1,219 +1,262 @@
-# 🛡️ Sentinel — Safety MVP App
+# 🛡️ Sentinel — Personal Safety MVP App
 
-> A Flutter-based personal safety application with real-time SOS alerts, GPS tracking, incident reporting, and an admin monitoring panel.
-
----
-
-## 📱 Overview
-
-Sentinel is a mobile safety app built for Android using Flutter and Firebase. It allows users to register, log in, trigger SOS emergencies, track their GPS location, and report incidents — all while an admin can monitor all activity in real time from a dedicated panel.
+A Flutter-based personal safety application with real-time SOS alerts, GPS tracking, incident reporting, and an admin monitoring panel.
 
 ---
 
-## ✨ Features
+# 📱 Overview
 
-### 👤 User Side
+Sentinel is a mobile safety MVP built using Flutter and Firebase.
+
+The app enables users to:
+
+- Register and log in securely
+- Trigger SOS emergencies
+- Track real-time GPS location
+- Report incidents with location capture
+- View recent activity
+
+An Admin Panel allows monitoring of all SOS alerts and incidents in real time.
+
+---
+
+# ✨ Features
+
+## 👤 User Features
+
 | Feature | Description |
 |---|---|
-| **Registration** | Name + Mobile + Password (SHA-256 hashed) |
-| **Login** | Mobile + Password + Static OTP verification |
-| **SOS Alert** | One-tap emergency trigger with confirmation popup, GPS capture, timestamp, Firestore save |
-| **GPS Tracking** | Real-time latitude, longitude, altitude, and accuracy display |
-| **Incident Report** | Type selection, description, auto location capture, Firestore save |
-| **Recent Activity** | Live SOS history on HomeScreen via Firestore stream |
-
-### 🔐 Admin Side
-| Feature | Description |
-|---|---|
-| **Admin Login** | Hardcoded credentials, no OTP required |
-| **SOS Tab** | All users' SOS events in real time — name, mobile, location, timestamp |
-| **Incidents Tab** | All users' incident reports — type, description, location, timestamp |
+| Registration | Name + Mobile + Password (SHA-256 hashed) |
+| Login | Mobile + Password + Static OTP verification |
+| OTP Simulation | Static OTP (`123456`) for MVP testing |
+| SOS Alert | One-tap emergency trigger with confirmation popup |
+| GPS Tracking | Real-time latitude, longitude, altitude & accuracy |
+| Incident Reporting | Type, description, optional image & auto location |
+| Recent Activity | Live SOS history using Firestore streams |
 
 ---
 
-## 🚀 Tech Stack
+## 🔐 Admin Features
+
+| Feature | Description |
+|---|---|
+| Admin Login | Hardcoded admin credentials |
+| SOS Monitoring | View all SOS alerts in real time |
+| Incident Monitoring | View all reported incidents |
+| Live Firestore Streams | Auto updates without refresh |
+
+---
+
+# 🚀 Tech Stack
 
 | Layer | Technology |
 |---|---|
-| **Framework** | Flutter 3.x (Dart) |
-| **State Management** | GetX |
-| **Backend** | Firebase (Firestore, Auth) |
-| **Authentication** | Firebase Anonymous Auth + SHA-256 password hashing |
-| **Database** | Cloud Firestore |
-| **Location** | Geolocator |
-| **OTP Input UI** | Pinput |
-| **Date Formatting** | Intl |
+| Framework | Flutter 3.x (Dart) |
+| State Management | GetX |
+| Backend | Firebase |
+| Authentication | Firebase Anonymous Auth |
+| Database | Cloud Firestore |
+| Location Services | Geolocator |
+| OTP Input | Pinput |
+| Hashing | Crypto (SHA-256) |
+| Permissions | Permission Handler |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
+```bash
 lib/
 ├── main.dart
 ├── firebase_options.dart
 ├── core/
 │   ├── constants/
-│   │   └── app_constants.dart       # Static OTP, admin credentials
+│   │   └── app_constants.dart
 │   └── theme/
-│       ├── app_colors.dart          # Color palette
-│       └── app_theme.dart           # ThemeData + static color refs
+│       ├── app_colors.dart
+│       └── app_theme.dart
 ├── shared/
 │   └── widgets/
-│       ├── app_button.dart          # Reusable button
-│       ├── app_text_field.dart      # Reusable text field
-│       ├── app_card.dart            # Reusable card
-│       ├── app_avatar.dart          # Initials avatar
-│       ├── app_badge.dart           # Label badge
+│       ├── app_button.dart
+│       ├── app_text_field.dart
+│       ├── app_card.dart
+│       ├── app_avatar.dart
+│       ├── app_badge.dart
 │       ├── app_gradient_container.dart
 │       └── loading_overlay.dart
 └── features/
     ├── auth/
     │   ├── controllers/
-    │   │   └── auth_controller.dart  # Login, register, OTP, logout
+    │   │   └── auth_controller.dart
     │   └── screens/
     │       ├── mobile_input_screen.dart
     │       ├── register_screen.dart
     │       └── otp_screen.dart
     ├── home/
     │   └── screens/
-    │       └── home_screen.dart      # Dashboard with stats + recent activity
+    │       └── home_screen.dart
     ├── sos/
     │   ├── controllers/
     │   │   └── sos_controller.dart
     │   └── screens/
-    │       └── sos_screen.dart       # Pulsing SOS button + success view
+    │       └── sos_screen.dart
     ├── gps/
     │   └── screens/
-    │       └── gps_screen.dart       # Location fetch + display
+    │       └── gps_screen.dart
     ├── incident/
     │   ├── controllers/
     │   │   └── incident_controller.dart
     │   └── screens/
-    │       └── incident_screen.dart  # Incident form + success view
+    │       └── incident_screen.dart
     └── admin/
         └── screens/
-            └── admin_screen.dart     # Admin panel with SOS + Incident tabs
+            └── admin_screen.dart
 ```
 
 ---
 
-## ⚙️ Setup & Installation
+# ⚙️ Setup & Installation
 
-### Prerequisites
-- Flutter SDK `>=3.7.0`
+## Prerequisites
+
+- Flutter SDK >= 3.7.0
 - Android Studio / VS Code
-- Firebase project (Blaze or Spark plan)
+- Firebase Project
 - Java 17+
 
-### 1. Clone the repo
+---
+
+## 1️⃣ Clone Repository
+
 ```bash
-git clone https://github.com/yourname/sentinel.git
+git clone https://github.com/yourusername/sentinel.git
 cd sentinel
 ```
 
-### 2. Install dependencies
+---
+
+## 2️⃣ Install Dependencies
+
 ```bash
 flutter pub get
 ```
 
-### 3. Firebase Setup
-```bash
-# Install FlutterFire CLI
-dart pub global activate flutterfire_cli
+---
 
-# Configure Firebase
+## 3️⃣ Firebase Setup
+
+Install FlutterFire CLI:
+
+```bash
+dart pub global activate flutterfire_cli
+```
+
+Configure Firebase:
+
+```bash
 flutterfire configure
 ```
 
-Then in Firebase Console:
-- **Authentication** → Sign-in method → **Anonymous** → Enable
-- **Firestore** → Create Database → Start in test mode
-- **Firestore** → Indexes → Add composite indexes (see below)
+---
 
-### 4. Run the app
+## Firebase Console Setup
+
+### Authentication
+Enable:
+- Anonymous Authentication
+
+### Firestore Database
+- Create database in test mode
+
+---
+
+## 4️⃣ Run Application
+
 ```bash
-flutter run -d android
+flutter run
 ```
 
 ---
 
-## 🗄️ Firestore Indexes Required
+# 🗄️ Firestore Indexes Required
 
-Go to Firebase Console → Firestore → Indexes → Composite → Add:
+Create the following indexes in Firebase Console:
 
-| Collection | Field 1 | Field 2 | Query Scope |
-|---|---|---|---|
-| `sos_events` | `uid` Ascending | `timestamp` Descending | Collection |
-| `incidents` | `uid` Ascending | `timestamp` Descending | Collection |
+| Collection | Field 1 | Field 2 |
+|---|---|---|
+| sos_events | uid Ascending | timestamp Descending |
+| incidents | uid Ascending | timestamp Descending |
 
-Single field indexes for Admin panel:
+### Single Field Indexes
 
 | Collection | Field | Order |
 |---|---|---|
-| `sos_events` | `timestamp` | Descending |
-| `incidents` | `timestamp` | Descending |
+| sos_events | timestamp | Descending |
+| incidents | timestamp | Descending |
 
 ---
 
-## 🔑 Login Credentials
+# 🔑 Login Credentials
 
-### Regular User
+## 👤 Regular User
+
 | Field | Value |
 |---|---|
 | Mobile | Any 10-digit number |
-| Password | Min 6 characters (set during registration) |
-| OTP | `123456` (static simulation) |
+| Password | User created |
+| OTP | `123456` |
 
-### Admin
+---
+
+## 🔐 Admin
+
 | Field | Value |
 |---|---|
 | Mobile | `0000000000` |
 | Password | `admin123` |
-| OTP | Not required — direct access |
 
 ---
 
-## 🗺️ App Flow
+# 🗺️ App Flow
 
-```
-Launch
-  │
-  ├── MobileInputScreen (Login)
-  │     ├── Admin credentials → AdminScreen
-  │     └── User credentials → OtpScreen → HomeScreen
-  │
-  └── RegisterScreen → OtpScreen → HomeScreen
-        │
-        ├── SOS Button → SosScreen
-        │     └── Confirm → Save to Firestore → Success
-        │
-        ├── GPS Card → GpsScreen
-        │     └── Fetch location → Display lat/lng/altitude/accuracy
-        │
-        └── Incident Card → IncidentScreen
-              └── Type + Description + Location → Save to Firestore → Success
+```text
+Launch App
+   │
+   ├── Login Screen
+   │      ├── Admin Login → Admin Panel
+   │      └── User Login → OTP Verification → Home
+   │
+   └── Register Screen
+           └── OTP Verification → Home
+                    │
+                    ├── SOS Module
+                    ├── GPS Tracking
+                    └── Incident Reporting
 ```
 
 ---
 
-## 🗃️ Firestore Data Structure
+# 🗃️ Firestore Data Structure
 
-### `users` collection
+## users collection
+
 ```json
 {
-  "uid": "firebase_anonymous_uid",
+  "uid": "firebase_uid",
   "name": "John Doe",
   "mobile": "9876543210",
-  "passwordHash": "sha256_hash_string",
+  "passwordHash": "sha256_hash",
   "createdAt": "timestamp"
 }
 ```
 
-### `sos_events` collection
+---
+
+## sos_events collection
+
 ```json
 {
-  "uid": "firebase_anonymous_uid",
+  "uid": "firebase_uid",
   "timestamp": "datetime",
   "latitude": 28.6139,
   "longitude": 77.2090,
@@ -221,12 +264,15 @@ Launch
 }
 ```
 
-### `incidents` collection
+---
+
+## incidents collection
+
 ```json
 {
-  "uid": "firebase_anonymous_uid",
+  "uid": "firebase_uid",
   "type": "Theft",
-  "description": "Incident description here",
+  "description": "Incident details",
   "imageUrl": null,
   "latitude": 28.6139,
   "longitude": 77.2090,
@@ -237,7 +283,7 @@ Launch
 
 ---
 
-## 📦 Dependencies
+# 📦 Dependencies
 
 ```yaml
 firebase_core: ^3.13.0
@@ -254,48 +300,97 @@ image_picker: ^1.1.2
 
 ---
 
-## 🔒 Security Notes
+# 🔒 Security Notes
 
-- Passwords are **SHA-256 hashed** before storing in Firestore — plain text is never saved
-- Firebase Anonymous Auth is used for session management
-- Firestore rules should be updated before production deployment
-- Admin credentials are hardcoded — move to environment variables for production
-
----
-
-## 🚧 Known Limitations
-
-- OTP is static (`123456`) — real Firebase Phone Auth requires Blaze plan
-- Image upload disabled — Firebase Storage requires Blaze plan
-- Anonymous Auth creates new UID on each login — data migration logic handles this for existing users
-- Admin credentials are hardcoded in source code
+- Passwords are SHA-256 hashed before storage
+- Plain text passwords are never saved
+- Firebase Anonymous Auth handles sessions
+- Firestore rules should be secured before production
+- Admin credentials should move to environment variables in production
 
 ---
 
-## 🛣️ Future Improvements
+# 🚧 Known Limitations
 
-- [ ] Real SMS OTP via Firebase Phone Auth (Blaze plan)
-- [ ] Image upload for incident reports (Firebase Storage)
-- [ ] Push notifications to admin on new SOS
-- [ ] Google Maps integration for location visualization
-- [ ] SOS alert to emergency contacts via SMS
-- [ ] Panic button (volume button shortcut)
-- [ ] Offline support with local caching
-- [ ] Admin dashboard with charts and analytics
+- Static OTP (`123456`) used for MVP
+- Firebase Storage not integrated
+- No push notifications
+- Anonymous Auth creates new UID on logout/login
+- Admin credentials are hardcoded
 
 ---
 
-## 👨‍💻 Built With
+# 🛣️ Future Improvements
 
-- **Flutter** — UI framework
-- **Firebase** — Backend as a service
-- **GetX** — State management + navigation
-- **Geolocator** — GPS location
+- Firebase Phone Authentication
+- Emergency contact SMS alerts
+- Push notifications for admins
+- Google Maps integration
+- Offline support
+- Analytics dashboard
+- Panic button shortcut
+- Image upload with Firebase Storage
+
+---
+
+# 🧪 Testing Notes
+
+## Tested On
+
+- Android Emulator
+- Physical Android Device
+
+## Edge Cases Handled
+
+- Empty field validation
+- Invalid OTP handling
+- Permission denied states
+- GPS unavailable state
+- Firestore save failures
+- Async loading states
 
 ---
 
-## 📄 License
+# 📸 Screenshots
 
-This project is built as an MVP for demonstration purposes.
+| Login | OTP | Home |
+|---|---|---|
+| Add Screenshot | Add Screenshot | Add Screenshot |
+
+| SOS | GPS | Incident |
+|---|---|---|
+| Add Screenshot | Add Screenshot | Add Screenshot |
+
+| Admin Panel |
+|---|
+| Add Screenshot |
 
 ---
+
+# 👨‍💻 Built With
+
+- Flutter
+- Firebase
+- GetX
+- Geolocator
+
+---
+
+# 📄 Assignment Submission Notes
+
+This project was developed as part of a technical evaluation assignment for Sentinel.
+
+Focus areas during development:
+
+- Clean architecture
+- Reusable components
+- Real-time Firebase integration
+- Product-oriented UI/UX
+- Edge case handling
+- Practical MVP implementation
+
+---
+
+# 📄 License
+
+This project is built for educational and evaluation purposes only.
