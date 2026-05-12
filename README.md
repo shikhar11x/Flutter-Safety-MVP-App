@@ -456,6 +456,9 @@ image_picker: ^1.1.2
 </td>
 </tr>
 </table>
+
+---
+
 # 👨‍💻 Built With
 
 - Flutter
