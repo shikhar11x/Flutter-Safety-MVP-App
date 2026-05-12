@@ -355,35 +355,87 @@ image_picker: ^1.1.2
 
 ## 🔐 Authentication
 
-| Login Screen | OTP Verification | Register Screen |
-|---|---|---|
-| ![](screenshots/login.jpeg) | ![](screenshots/otp.jpeg) | ![](screenshots/signin.jpeg) |
+<table>
+<tr>
+<td align="center">
+<img src="screenshots/login.jpeg" width="250"/>
+<br/>
+<b>Login Screen</b>
+</td>
+
+<td align="center">
+<img src="screenshots/otp.jpeg" width="250"/>
+<br/>
+<b>OTP Verification</b>
+</td>
+
+<td align="center">
+<img src="screenshots/signin.jpeg" width="250"/>
+<br/>
+<b>Register Screen</b>
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🏠 User Dashboard
 
-| Home Screen | GPS Tracking |
-|---|---|
-| ![](screenshots/home.jpeg) | ![](screenshots/gps.jpeg) |
+<table>
+<tr>
+<td align="center">
+<img src="screenshots/home.jpeg" width="250"/>
+<br/>
+<b>Home Screen</b>
+</td>
+
+<td align="center">
+<img src="screenshots/gps.jpeg" width="250"/>
+<br/>
+<b>GPS Tracking</b>
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🚨 Emergency & Incident
 
-| SOS Alert | Incident Reporting |
-|---|---|
-| ![](screenshots/home.jpeg) | ![](screenshots/incident.jpeg) |
+<table>
+<tr>
+<td align="center">
+<img src="screenshots/home.jpeg" width="250"/>
+<br/>
+<b>SOS Alert</b>
+</td>
+
+<td align="center">
+<img src="screenshots/incident.jpeg" width="250"/>
+<br/>
+<b>Incident Reporting</b>
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🛡️ Admin Panel
 
-| Admin Dashboard | Admin Monitoring |
-|---|---|
-| ![](screenshots/admin1.jpeg) | ![](screenshots/admin2.jpeg) |
+<table>
+<tr>
+<td align="center">
+<img src="screenshots/admin1.jpeg" width="250"/>
+<br/>
+<b>Admin Dashboard</b>
+</td>
 
----
+<td align="center">
+<img src="screenshots/admin2.jpeg" width="250"/>
+<br/>
+<b>Admin Monitoring</b>
+</td>
+</tr>
+</table>
 
 # 👨‍💻 Built With
 
