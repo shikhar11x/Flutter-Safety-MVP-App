@@ -75,7 +75,7 @@ class _MobileInputScreenState extends State<MobileInputScreen> {
                 const SizedBox(height: 8),
 
                 const Text(
-                  'Login to your Sentinel account',
+                  'Login to your Vanguard account',
                   style: TextStyle(
                     fontSize: 15,
                     color: AppColors.textSecondary,
@@ -121,8 +121,10 @@ class _MobileInputScreenState extends State<MobileInputScreen> {
                   hint: 'Enter your password',
                   controller: _passwordCtrl,
                   obscureText: _obscurePassword,
-                  prefixIcon: const Icon(Icons.lock_outline_rounded,
-                      color: AppColors.textSecondary),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline_rounded,
+                    color: AppColors.textSecondary,
+                  ),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscurePassword
@@ -130,8 +132,10 @@ class _MobileInputScreenState extends State<MobileInputScreen> {
                           : Icons.visibility_outlined,
                       color: AppColors.textSecondary,
                     ),
-                    onPressed: () =>
-                        setState(() => _obscurePassword = !_obscurePassword),
+                    onPressed:
+                        () => setState(
+                          () => _obscurePassword = !_obscurePassword,
+                        ),
                   ),
                   validator: (val) {
                     if (val == null || val.isEmpty) {
@@ -144,34 +148,39 @@ class _MobileInputScreenState extends State<MobileInputScreen> {
                 const SizedBox(height: 12),
 
                 // Error
-                Obx(() => controller.errorMessage.value.isNotEmpty
-                    ? Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: Text(
-                          controller.errorMessage.value,
-                          style: const TextStyle(
-                            color: AppColors.primary,
-                            fontSize: 13,
-                          ),
-                        ),
-                      )
-                    : const SizedBox.shrink()),
+                Obx(
+                  () =>
+                      controller.errorMessage.value.isNotEmpty
+                          ? Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: Text(
+                              controller.errorMessage.value,
+                              style: const TextStyle(
+                                color: AppColors.primary,
+                                fontSize: 13,
+                              ),
+                            ),
+                          )
+                          : const SizedBox.shrink(),
+                ),
 
                 const SizedBox(height: 24),
 
                 // Login Button
-                Obx(() => AppButton(
-                      label: 'Send OTP',
-                      isLoading: controller.isLoading.value,
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          controller.sendOtpForLogin(
-                            _mobileCtrl.text.trim(),
-                            _passwordCtrl.text,
-                          );
-                        }
-                      },
-                    )),
+                Obx(
+                  () => AppButton(
+                    label: 'Send OTP',
+                    isLoading: controller.isLoading.value,
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        controller.sendOtpForLogin(
+                          _mobileCtrl.text.trim(),
+                          _passwordCtrl.text,
+                        );
+                      }
+                    },
+                  ),
+                ),
 
                 const SizedBox(height: 24),
 

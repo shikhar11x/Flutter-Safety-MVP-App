@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen>
                             Text(
                               _userPhone.isNotEmpty
                                   ? '+91 $_userPhone'
-                                  : 'Sentinel User',
+                                  : 'Vanguard User',
                               style: const TextStyle(
                                 color: AppTheme.textMuted,
                                 fontSize: 12,

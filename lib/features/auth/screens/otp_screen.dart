@@ -83,7 +83,7 @@ class OtpScreen extends StatelessWidget {
                         color: AppColors.warning, size: 18),
                     SizedBox(width: 8),
                     Text(
-                      'Test OTP: 123456',
+                      'Test OTP: 234567',
                       style: TextStyle(
                         color: AppColors.warning,
                         fontSize: 13,
