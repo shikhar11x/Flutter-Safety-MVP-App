@@ -1,4 +1,4 @@
-# 🛡️ Sentinel — Personal Safety MVP App
+# 🛡️ Vanguard — Personal Safety MVP App
 
 A Flutter-based personal safety application with real-time SOS alerts, GPS tracking, incident reporting, and an admin monitoring panel.
 
@@ -6,7 +6,7 @@ A Flutter-based personal safety application with real-time SOS alerts, GPS track
 
 # 📱 Overview
 
-Sentinel is a mobile safety MVP built using Flutter and Firebase.
+Vanguard is a mobile safety MVP built using Flutter and Firebase.
 
 The app enables users to:
 
@@ -129,8 +129,8 @@ lib/
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/sentinel.git
-cd sentinel
+git clone https://github.com/yourusername/vanguard.git
+cd vanguard
 ```
 
 ---
@@ -470,12 +470,12 @@ image_picker: ^1.1.2
 
 # 📄 Assignment Submission Notes
 
-This project was developed as part of a technical evaluation assignment for Sentinel.
+This project was developed as part of a personal safety application MVP.
 
 Focus areas during development:
 
 - Clean architecture
-- Reusable components
+- Reusable widget components
 - Real-time Firebase integration
 - Product-oriented UI/UX
 - Edge case handling
@@ -485,4 +485,4 @@ Focus areas during development:
 
 # 📄 License
 
-This project is built for educational and evaluation purposes only.
+This project is built for educational purposes only.
